@@ -161,7 +161,7 @@ class Rong360(Item):
 
 - - 第二步最终效果图
 
-![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C%E5%9B%BE.png)
+![Image text]()
 
 ##### 第三步
 
