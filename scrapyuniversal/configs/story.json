@@ -1,0 +1,63 @@
+{
+  "spider": "universal",
+  "website": "起点中文网",
+  "type": "小说",
+  "index": "https://www.qidian.com/",
+  "settings": {
+    "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "story",
+    "MONGO_COLLECTION": "letter"
+  },
+  "process_links": false,
+  "parse":false,
+  "start_urls": {
+    "type": "static",
+    "value": [
+      "https://www.qidian.com/all_pub"
+    ]
+  }
+  ,
+  "allowed_domains": [
+    "qidian.com"
+  ],
+  "rules": "qidian",
+    "item":{
+    "class":"QiDian",
+    "loader":"QiDianLoader",
+    "attrs":{
+      "name":[
+        {
+          "method": "xpath",
+          "args":[
+            "//div[@class='main-text-wrap']/div[@class='text-head']//div[@class='info fl']/a[1]/text()"
+          ]
+        }
+      ],
+      "title":[
+        {
+          "method":"css",
+          "args":[
+            ".j_chapterName::text"
+          ]
+        }
+      ],
+      "number_words":[
+        {
+          "method":"xpath",
+          "args":[
+            "//div[@class='main-text-wrap']/div[@class='text-head']//div[@class='info fl']/i[2]/span/text()"
+          ]
+        }
+      ],
+      "content":[
+        {
+        "method":"xpath",
+        "args":[
+          "//div[@class='read-content j_readContent']//p//text()"
+          ]
+        }
+      ]
+    }
+  }
+}

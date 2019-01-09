@@ -1,0 +1,93 @@
+{
+  "spider": "universal",
+  "website": "华尔街见闻",
+  "type": "新闻",
+  "index": "https://wallstreetcn.com/",
+  "settings": {
+    "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+    "Cookie":"Hm_lvt_c32eb45d9f69afbc206e06d63e668e75=1535382362; PHPSESSID=pr0qg95aco84q51elgg0h98u27; Hm_lpvt_c32eb45d9f69afbc206e06d63e668e75=1535387002",
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "news",
+    "MONGO_COLLECTION": "wall_street"
+  },
+  "process_links": false,
+  "parse":true,
+  "start_urls": {
+    "type": "dynamic",
+    "method": "wall_street"
+  },
+  "allowed_domains": [
+    "wallstreetcn.com"
+  ],
+  "rules": "wall_street",
+  "item":{
+  "class": "WallStreetNewsItem",
+    "loader":"WallStreetLoader",
+    "attrs":{
+      "title":[
+        {
+          "method": "css",
+          "args": [
+            ".article__heading__title::text"
+          ]
+        }
+      ],
+      "digest":[
+        {
+          "method":"css",
+          "args":[
+            ".summary::text"
+          ]
+        }
+      ],
+      "content":[
+        {
+          "method":"css",
+          "args":[
+            ".node-article-content p::text"
+          ]
+        }
+      ],
+      "url":[
+        {
+          "method":"attr",
+          "args": [
+            "url"
+          ]
+        }
+      ],
+      "datetime":[
+        {
+          "method":"css",
+          "args":[
+            ".article__heading__meta .time::text"
+          ]
+        }
+      ],
+      "source":[
+        {
+          "method":"css",
+          "args":[
+        ".article__heading__meta .auth::text"
+      ]
+        }
+      ],
+      "website": [
+        {
+          "method": "value",
+          "args": [
+            "华尔街见闻"
+          ]
+        }
+      ],
+      "image": [
+        {
+          "method":"css",
+          "args": [
+            ".zoomer__img::attr(src)"
+          ]
+        }
+      ]
+    }
+  }
+}

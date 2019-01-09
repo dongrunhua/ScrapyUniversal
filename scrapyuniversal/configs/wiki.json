@@ -1,0 +1,58 @@
+{
+  "spider": "universal",
+  "website": "wiki",
+  "type": "scheme",
+  "index": "https://zh.wikipedia.org",
+  "settings": {
+    "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "wiki",
+    "MONGO_COLLECTION": "wiki"
+  },
+  "process_links": false,
+  "parse":false,
+  "start_urls": {
+    "type": "static",
+    "value": [
+      "https://zh.wikipedia.org/wiki/Wikipedia:%E5%88%86%E9%A1%9E%E7%B4%A2%E5%BC%95"
+    ]
+  }
+  ,
+  "allowed_domains": [
+    "wikipedia.org"
+  ],
+  "rules": "wiki",
+   "item":{
+  "class": "Zhiku",
+    "loader":"DefaultLoader",
+    "attrs":{
+      "name":[
+        {
+          "method": "xpath",
+          "args": [
+            "//*[@id='firstHeading']//text()"
+          ],
+          "re":":(.*)"
+        }
+      ],
+      "ID":[
+        {
+          "method": "attr",
+          "args": [
+            "ID"
+          ]
+        }
+      ],
+
+      "PID":[
+        {
+          "method":"attr",
+          "args":[
+            "PID"
+          ]
+        }
+      ]
+    }
+  }
+
+}

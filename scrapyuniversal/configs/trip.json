@@ -1,0 +1,44 @@
+{
+  "spider": "universal",
+  "website": "新浪",
+  "type": "旅游",
+  "index": "http://travel.sina.com.cn/",
+  "settings": {
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "news",
+    "MONGO_COLLECTION": "sina_trip"
+  },
+  "process_links": false,
+  "parse":true,
+  "start_urls": {
+    "type": "dynamic",
+    "method": "trip"
+  },
+  "allowed_domains": [
+    "travel.sina.com.cn"
+  ],
+  "rules": "trip",
+  "item":{
+  "class": "Trip",
+    "loader":"TripLoader",
+    "attrs":{
+      "title":[
+        {
+          "method": "xpath",
+          "args": [
+            "//*[@id='artibodyTitle']/text()",
+            "//*[@class='main-title']/text()"
+          ]
+        }
+      ],
+      "content":[
+        {
+          "method":"xpath",
+          "args":[
+            "//*[@id='artibody']/p/text()"
+          ]
+        }
+      ]
+    }
+  }
+}

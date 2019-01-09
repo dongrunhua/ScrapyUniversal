@@ -1,0 +1,61 @@
+{
+  "spider": "universal",
+  "website": "中国法律法规信息库",
+  "type": "法律法规",
+  "index": "http://law.npc.gov.cn/",
+  "settings": {
+    "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "test",
+    "MONGO_COLLECTION": "chinamessage"
+  },
+  "process_links": false,
+  "parse":false,
+  "start_urls": {
+    "type": "dynamic",
+    "method":"chinamessage",
+    "args": [ ]
+  },
+  "allowed_domains": [
+    "law.npc.gov.cn"
+  ],
+  "rules": "chinamessage",
+  "item":{
+    "class":"ChinaMessageItem",
+    "loader":"ChinaMessageLoader",
+    "attrs":{
+      "title":[
+        {
+          "method": "xpath",
+          "args":[
+            "//*[@id='content']/div/div[1]/text()"
+          ]
+        }
+      ],
+      "url":[
+        {
+          "method":"attr",
+          "args": [
+            "url"
+          ]
+        }
+      ],
+      "website":[
+        {
+          "method": "value",
+          "args": [
+            "中国法律法规信息库"
+          ]
+        }
+      ],
+      "content":[
+        {
+          "method":"xpath",
+          "args":[
+            "//*[@class='nr']//text()"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "spider": "universal",
+  "website": "金融界",
+  "type": "新闻",
+  "index": "http://finance.jrj.com.cn/",
+  "settings": {
+    "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "news",
+    "MONGO_COLLECTION": "finance"
+  },
+  "process_links": false,
+  "parse":false,
+  "start_urls": {
+    "type": "static",
+    "value": [
+      "http://finance.jrj.com.cn/xwk/201808/20180827_1.shtml"
+    ]
+  },
+  "allowed_domains": [
+    "finance.jrj.com.cn"
+  ],
+  "rules": "finance",
+  "item":{
+    "class":"FinanceItem",
+    "loader":"FinanceLoader",
+    "attrs":{
+      "title":[
+        {
+          "method": "css",
+          "args":[
+            "#strNewsTitle::text",
+            ".titmain h1::text",
+
+          ]
+        }
+      ],
+      "url":[
+        {
+          "method":"attr",
+          "args": [
+            "url"
+          ]
+        }
+      ],
+      "website":[
+        {
+          "method": "value",
+          "args": [
+            "新闻界"
+          ]
+        }
+      ],
+      "content":[
+        {
+          "method":"xpath",
+          "args":[
+            "//*[@id='IDNewsDtail']//text()"
+          ]
+        }
+      ],
+      "datetime":[
+        {
+          "method":"css",
+          "args":[
+            ".inftop span::text"
+          ],
+          "re": "\\d+年\\d+月\\d+日 \\d+:\\d+"
+        }
+      ],
+      "source":[
+        {
+          "method":"css",
+          "args":[
+            "#chgFromStr::text"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "spider": "universal",
+  "website": "维基百科",
+  "type": "知识百科",
+  "index": "https://zh.wikipedia.org/",
+  "settings": {
+    "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "wikipedia",
+    "MONGO_COLLECTION": "question_answer"
+  },
+  "process_links": false,
+  "parse":false,
+  "start_urls": {
+    "type": "dynamic",
+    "value": "wikipedia"
+  }
+  ,
+  "allowed_domains": [
+    "zh.wikipedia.org"
+  ],
+  "rules": "wikipedia",
+  "item":{
+    "class":"ChinaCourt",
+    "loader":"ChinaCourtLoader",
+    "attrs":{
+      "title":[
+        {
+          "method": "css",
+          "args":[
+            ".detail_bigtitle::text"
+          ]
+        }
+      ],
+      "url":[
+        {
+          "method":"attr",
+          "args": [
+            "url"
+          ]
+        }
+      ],
+      "website":[
+        {
+          "method": "value",
+          "args": [
+            "中国法院网"
+          ]
+        }
+      ],
+      "datetime":[
+        {
+          "method":"css",
+          "args":[
+            ".time::text"
+          ]
+        }
+      ],
+      "source":[
+        {
+          "method":"css",
+          "args":[
+            ".source::text"
+          ],
+          "re": "来源：(\\w+)"
+        }
+      ],
+      "category":[
+        {
+          "method": "value",
+          "args": [
+            "立法追踪"
+          ]
+        }
+      ],
+      "content":[{
+        "method":"css",
+        "args":[
+          ".detail_txt::text",
+          ".detail_txt p::text"
+          ]
+        }
+      ]
+    }
+  }
+}

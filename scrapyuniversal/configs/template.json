@@ -1,0 +1,32 @@
+{
+  "spider": "universal",
+  "index": "index",
+  "settings": {
+    "USER_AGENT": "USER_AGENT",
+    "MONGO_URI": "MONGO_URI",
+    "MONGO_DB": "MONGO_DB",
+    "MONGO_COLLECTION": "MONGO_COLLECTION"
+  },
+  "process_links": false,
+  "parse":false,
+
+  "start_urls": {
+    "type": "static",
+    "value": [
+    ]
+  }
+  ,
+  "allowed_domains": [
+    "mbalib.com"
+  ],
+  "rules": "zhiku",
+   "item":{
+  "class": "Zhiku",
+    "loader":"DefaultLoader",
+    "attrs":{
+
+
+    }
+   }
+
+}

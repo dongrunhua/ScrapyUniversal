@@ -1,0 +1,51 @@
+{
+  "spider": "universal",
+  "website": "雪球",
+  "type": "新闻",
+  "index": "https://xueqiu.com/",
+  "settings": {
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "news",
+    "MONGO_COLLECTION": "xueqiu"
+  },
+  "process_links": false,
+  "parse":true,
+  "start_urls": {
+    "type": "dynamic",
+    "method": "xueqiu"
+  },
+  "allowed_domains": [
+    "xueqiu.com"
+  ],
+  "rules": "xueqiu",
+  "item":{
+  "class": "XueQiu",
+    "loader":"XueQiuLoader",
+    "attrs":{
+      "title":[
+        {
+          "method": "css",
+          "args": [
+            ".article__bd__title::text"
+          ]
+        }
+      ],
+      "content":[
+        {
+          "method":"css",
+          "args":[
+            ".article__bd__detail p::text"
+          ]
+        }
+      ],
+      "url":[
+        {
+          "method":"attr",
+          "args": [
+            "url"
+          ]
+        }
+      ]
+    }
+  }
+}

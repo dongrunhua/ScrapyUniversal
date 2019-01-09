@@ -1,0 +1,44 @@
+{
+  "spider": "universal",
+  "website": "新浪",
+  "type": "财经",
+  "index": "https://finance.sina.com.cn/",
+  "settings": {
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "news",
+    "MONGO_COLLECTION": "sina_finance"
+  },
+  "process_links": false,
+  "parse":true,
+  "start_urls": {
+    "type": "dynamic",
+    "method": "sina_finance"
+  },
+  "allowed_domains": [
+    "finance.sina.com.cn"
+  ],
+  "rules": "sina_finance",
+  "item":{
+  "class": "Sina_Finance",
+    "loader":"SinaFinanceLoader",
+    "attrs":{
+      "title":[
+        {
+          "method": "xpath",
+          "args": [
+            "//*[@id='artibodyTitle']/text()",
+            "//*[@class='main-title']/text()"
+          ]
+        }
+      ],
+      "content":[
+        {
+          "method":"xpath",
+          "args":[
+            "//*[@id='artibody']//text()"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "spider": "universal",
+  "index": "www.rong360.com/",
+  "settings": {
+    "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "news",
+    "MONGO_COLLECTION": "rong360"
+  },
+  "process_links": false,
+  "parse": false,
+  "start_urls":
+  {
+    "type": "static",
+    "value": [
+      "https://www.rong360.com/gl/daikuangonglue/gongluepindao/"
+    ]
+  },
+  "allowed_domains": ["rong360.com"],
+  "rules": "rong360",
+  "item":
+  {
+    "class": "Rong360",
+    "loader": "DefaultLoader",
+    "attrs": {
+      "title":
+      [
+        {
+          "method": "css",
+          "args": [
+            ".act-content h1::text"
+          ]
+        }], "content": [{"method": "css", "args": [".act-content p::text"]}]}}}

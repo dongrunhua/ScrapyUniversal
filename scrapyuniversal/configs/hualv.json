@@ -1,0 +1,26 @@
+{
+  "spider": "universal",
+  "website": "华律网",
+  "type": "法律法规",
+  "index": "http://www.66law.cn/",
+  "settings": {
+    "USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36",
+    "MONGO_URI": "localhost",
+    "MONGO_DB": "law",
+    "MONGO_COLLECTION": "hualv",
+    "RETRY_HTTP_CODES":[401, 403, 408, 414, 500, 502, 503, 504, 302]
+  },
+  "process_links": true,
+  "parse":false,
+  "start_urls": {
+    "type": "static",
+    "value": [
+      "https://wiki.mbalib.com/wiki/MBA%E6%99%BA%E5%BA%93%E7%99%BE%E7%A7%91:%E5%88%86%E7%B1%BB%E7%B4%A2%E5%BC%95"
+    ]
+  }
+  ,
+  "allowed_domains": [
+    "mbalib.com"
+  ],
+  "rules": "zhiku"
+}
