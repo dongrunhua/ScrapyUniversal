@@ -12,7 +12,7 @@
 
 安装成功如下图
 
-![Image text](https://gitlab.com/GammaLab_AI/scrapyuniversal/raw/master/img-folder/%E5%AE%89%E8%A3%85xpath%20%E5%9B%BE.png)
+![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/%E5%AE%89%E8%A3%85xpath%20%E5%9B%BE.png)
 
 ### MongoDB
 
@@ -89,7 +89,7 @@ https://www.rong360.com/gl/daikuangonglue/gongluepindao/
 
 爬取6691页的每一条新闻
 
-![Image text](https://gitlab.com/GammaLab_AI/scrapyuniversal/raw/master/img-folder/demo1%E5%9B%BE%E7%89%871.png)
+![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/demo1%E5%9B%BE%E7%89%871.png)
 
 ##### 第一步
 
@@ -103,7 +103,7 @@ https://www.rong360.com/gl/daikuangonglue/gongluepindao/
 
 - 运行CreateConfig.py后会出现如下窗口
 
-![Image text](https://gitlab.com/GammaLab_AI/scrapyuniversal/raw/master/img-folder/demo1%20%E5%9B%BE%E7%89%872.png)
+![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/demo1%20%E5%9B%BE%E7%89%872.png)
 
 ##### 第二步
 
@@ -155,13 +155,13 @@ class Rong360(Item):
                             
 - - ChromeXpath使用法
 
-![Image text](https://gitlab.com/GammaLab_AI/scrapyuniversal/raw/master/img-folder/xpath%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.png)
+![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/xpath%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.png)
 
 - CommitButton : 点击Commit 
 
 - - 第二步最终效果图
 
-![Image text](https://gitlab.com/GammaLab_AI/scrapyuniversal/raw/master/img-folder/%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C%E5%9B%BE.png)
+![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C%E5%9B%BE.png)
 
 ##### 第三步
 
@@ -173,12 +173,14 @@ python run.py rong360
 
 - 运行成功效果图
 
-![Image text](https://gitlab.com/GammaLab_AI/scrapyuniversal/raw/master/img-folder/demo1%E6%88%90%E5%8A%9F%E5%9B%BE%E7%89%87.png)
+![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/demo1%E6%88%90%E5%8A%9F%E5%9B%BE%E7%89%87.png)
 
-![Image text](https://gitlab.com/GammaLab_AI/scrapyuniversal/raw/master/img-folder/demo1%E6%88%90%E5%8A%9F%E7%88%AC%E5%8F%96%E5%86%85%E5%AE%B9%E5%9B%BE.png)
+![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/demo1%E6%88%90%E5%8A%9F%E7%88%AC%E5%8F%96%E5%86%85%E5%AE%B9%E5%9B%BE.png)
 
 - Mongodb 数据存储图
 
-![Image text](https://gitlab.com/GammaLab_AI/scrapyuniversal/raw/master/img-folder/mongodb%20%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%9B%BE.png)
+![Image text](https://github.com/dongrunhua/ScrapyUniversal/raw/master/img-folder/mongodb%20%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%9B%BE.png)
 
 - Mongodb图形界面客户端推荐使用 Robo 3T
+
+- 后期会吧ProxyPool CookiePool 增加进去
